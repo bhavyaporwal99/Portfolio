@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me - Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #000;
+            color: #fff;
+        }
+
+        /* NAVBAR */
+        .nav {
+            display: flex;
+            justify-content: center;
+            padding: 20px 0;
+        }
+
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #fff;
+            font-size: 14px;
+        }
+
+        nav a:hover {
+            color: #f5b400;
+        }
+
+        /* ABOUT SECTION */
+        .about {
+            padding: 80px 10%;
+        }
+
+        /* TITLE */
+        .about h1 {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 50px;
+            position: relative;
+        }
+
+        /* underline effect */
+        .about h1::after {
+            content: "";
+            width: 80px;
+            height: 3px;
+            background: #f5b400;
+            display: block;
+            margin: 10px auto 0;
+        }
+
+        /* CONTAINER */
+        .about-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 60px;
+        }
+
+        /* IMAGE */
+        .about-img img {
+            width: 260px;
+            height: 320px;
+            object-fit: cover;
+            border-radius: 20px;
+            box-shadow: 0 0 25px rgba(244, 124, 20, 0.3);
+        }
+
+        /* TEXT */
+        .about-text {
+            max-width: 500px;
+        }
+
+        /* DESCRIPTION */
+        .about-text p {
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        /* LIST */
+        .about-text ul {
+            list-style: none;
+        }
+
+        .about-text li {
+            margin-bottom: 10px;
+            font-size: 15px;
+        }
+
+        /* highlight labels */
+        .about-text li b {
+            color: #f5b400;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <header>
+        <div class="container nav">
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="about.html" target="_blank">About</a>
+                <a href="resume.html" target="_blank">Resume</a>
+                <a href="services.html" target="_blank">Services</a>
+                <a href="skills.html" target="_blank">Skills</a>
+                <a href="projects.html" target="_blank">Projects</a>
+                <a href="contact.html" target="">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <br><br>
+
+    <section class="about">
+        <h1>About Me</h1>
+        <br>
+
+        <div class="about-container">
+
+            <!-- LEFT IMAGE -->
+            <div class="about-img">
+                <img src="assets/profile.jpg" alt="about">
+            </div>
+
+            <!-- RIGHT TEXT -->
+            <div class="about-text">
+                <p>
+                    I am a passionate web developer and BCA student who enjoys building modern websites.
+                </p>
+                <br>
+
+                <ul>
+                    <li><b>Name:</b> Bhavya Porwal</li>
+                    <li><b>DOB:</b> Feb 3, 2008</li>
+                    <li><b>Address:</b> India</li>
+                    <li><b>Email:</b> bhavyaporwal99@mail.com</li>
+                </ul>
+            </div>
+
+        </div>
+    </section>
+</body>
+
+</html>

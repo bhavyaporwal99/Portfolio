@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacts - Portfolio</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: black;
+            color: white;
+        }
+
+        /* NAVBAR */
+        .nav {
+            display: flex;
+            justify-content: center;
+            padding: 20px 0;
+        }
+
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #fff;
+            font-size: 14px;
+        }
+
+        nav a:hover {
+            color: #f5b400;
+        }
+
+        /* CONTACT SECTION */
+        .contact {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 85vh;
+        }
+
+        /* CARD */
+        .contact-box {
+            background: #111;
+            padding: 50px;
+            border-radius: 15px;
+            width: 350px;
+            text-align: center;
+            box-shadow: 0 0 20px rgba(255, 180, 0, 0.2);
+        }
+
+        .contact-box h2 {
+            margin-bottom: 15px;
+        }
+
+        .contact-box p {
+            margin: 5px 0;
+            color: #ccc;
+        }
+
+        /* INPUTS */
+        input,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            outline: none;
+            border-radius: 6px;
+            background: #222;
+            color: #fff;
+        }
+
+        textarea {
+            resize: none;
+            height: 80px;
+        }
+
+        /* BUTTON */
+        button {
+            width: 100%;
+            padding: 10px;
+            background: #f5b400;
+            color: #000;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        button:hover {
+            background: #ffcc00;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <header>
+        <div class="nav">
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="resume.html">Resume</a>
+                <a href="services.html">Services</a>
+                <a href="skills.html">Skills</a>
+                <a href="projects.html">Projects</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- CONTACT -->
+    <section class="contact">
+        <div class="contact-box">
+
+            <h2>Contact Me</h2>
+
+            <p>Email: bhavyaporwal99@mail.com</p>
+            <p>Phone: +91 8619876105</p>
+
+            <form action="https://formspree.io/f/xjykppkq" method="POST">
+
+                <input type="text" name="name" placeholder="Your Name" required>
+
+                <input type="email" name="email" placeholder="Your Email" required>
+
+                <textarea name="message" placeholder="Message" required></textarea>
+
+                <button type="submit">Send Message</button>
+
+            </form>
+
+        </div>
+    </section>
+
+</body>
+
+</html>
