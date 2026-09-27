@@ -203,24 +203,34 @@ nav a:hover::after {
     border-radius: 5px;
 }
 
-/* ================= MOBILE RESPONSIVE ================= */
+/* ================= MOBILE RESPONSIVE (IMPROVED) ================= */
 @media (max-width: 768px) {
+
+    body {
+        overflow-x: hidden;
+    }
+
+    .container {
+        width: 100%;
+        padding: 0 15px;
+    }
 
     /* NAVBAR */
     nav {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
+        gap: 10px;
     }
 
     nav a {
-        margin: 10px;
         font-size: 14px;
+        margin: 5px;
     }
 
     /* HERO */
     .hero {
-        padding: 40px 0;
+        padding: 30px 0;
         text-align: center;
     }
 
@@ -232,33 +242,63 @@ nav a:hover::after {
         max-width: 100%;
     }
 
-    .hero h1 {
-        font-size: 28px;
+    .hello {
+        font-size: 14px;
     }
 
+    .hero h1 {
+        font-size: 26px;
+    }
+
+    .subtitle {
+        font-size: 14px;
+    }
+
+    /* BUTTONS */
+    .buttons {
+        margin-top: 15px;
+    }
+
+    .btn {
+        display: block;
+        width: 100%;
+        margin: 10px 0;
+        text-align: center;
+    }
+
+    /* IMAGE */
     .image img {
-        width: 220px;
-        height: 260px;
+        width: 200px;
+        height: 240px;
         margin-top: 20px;
+        border-radius: 15px;
     }
 
     /* ABOUT */
     .about-content {
         flex-direction: column;
         text-align: center;
+        gap: 20px;
     }
 
     .about-img img {
-        width: 220px;
+        width: 200px;
     }
 
     .about-text {
         padding: 20px;
     }
 
-    /* SKILLS */
-    .skill p {
+    .about-text p {
         font-size: 14px;
     }
 
+    /* SKILLS */
+    .section-title {
+        font-size: 22px;
+    }
+
+    .skill p {
+        font-size: 14px;
+    }
 }
