@@ -202,3 +202,63 @@ nav a:hover::after {
     background: #f5b400;
     border-radius: 5px;
 }
+
+/* ================= MOBILE RESPONSIVE ================= */
+@media (max-width: 768px) {
+
+    /* NAVBAR */
+    nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    nav a {
+        margin: 10px;
+        font-size: 14px;
+    }
+
+    /* HERO */
+    .hero {
+        padding: 40px 0;
+        text-align: center;
+    }
+
+    .hero-content {
+        flex-direction: column;
+    }
+
+    .hero .text {
+        max-width: 100%;
+    }
+
+    .hero h1 {
+        font-size: 28px;
+    }
+
+    .image img {
+        width: 220px;
+        height: 260px;
+        margin-top: 20px;
+    }
+
+    /* ABOUT */
+    .about-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-img img {
+        width: 220px;
+    }
+
+    .about-text {
+        padding: 20px;
+    }
+
+    /* SKILLS */
+    .skill p {
+        font-size: 14px;
+    }
+
+}
