@@ -7,35 +7,61 @@
     <title>Resume - Portfolio</title>
 
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
-        }
+       * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
 
-        body {
-            background: #000;
-            color: #fff;
-        }
+body {
+    background: #000;
+    color: #fff;
+}
 
-        /* NAVBAR */
-        .nav {
-            display: flex;
-            justify-content: center;
-            padding: 20px 0;
-        }
+/* CONTAINER */
+.container {
+    width: 90%;
+    margin: auto;
+}
 
-        nav a {
-            margin: 0 15px;
-            text-decoration: none;
-            color: #fff;
-            font-size: 14px;
-        }
+/* NAVBAR */
+.header {
+    position: sticky;
+    top: 0;
+    background: #000;
+    z-index: 1000;
+}
 
-        nav a:hover {
-            color: #f5b400;
-        }
+.nav {
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+}
+
+nav a {
+    margin: 0 20px;
+    text-decoration: none;
+    color: #fff;
+    font-size: 16px;
+    position: relative;
+}
+
+/* underline hover */
+nav a::after {
+    content: "";
+    width: 0%;
+    height: 2px;
+    background: #f5b400;
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    transition: 0.3s;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
 
         /* RESUME SECTION */
         .resume {
