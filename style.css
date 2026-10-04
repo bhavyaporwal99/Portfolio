@@ -20,7 +20,7 @@ body {
 .header {
     position: sticky;
     top: 0;
-    background: #000;
+    background: black;
     z-index: 1000;
 }
 
@@ -123,7 +123,7 @@ nav a:hover::after {
     height: 380px;
     object-fit: cover;
     border-radius: 20px;
-    box-shadow: 0 0 25px rgba(255, 180, 0, 0.3);
+
 }
 
 /* ABOUT */
@@ -171,134 +171,161 @@ nav a:hover::after {
 }
 
 /* SKILLS */
+/* ================= SKILLS PREMIUM ================= */
+
 .skills {
     padding: 80px 0;
-}
-
-.section-title {
     text-align: center;
-    margin-bottom: 40px;
-    font-size: 28px;
 }
 
-.skill {
-    margin-bottom: 20px;
+.skills-box {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 25px;
+    margin-top: 40px;
 }
 
-.skill p {
-    display: flex;
-    justify-content: space-between;
+/* CARD */
+.skill-card {
+    background: #111;
+    padding: 25px;
+    border-radius: 15px;
+    transition: 0.4s;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
 }
 
-.bar {
-    height: 8px;
-    background: #222;
-    margin-top: 5px;
-    border-radius: 5px;
+/* ICON */
+.skill-card i {
+    font-size: 40px;
+    margin-bottom: 10px;
+    color: #f5b400;
 }
 
-.fill {
-    height: 100%;
+/* TEXT */
+.skill-card p {
+    font-size: 14px;
+}
+
+/* HOVER EFFECT 🔥 */
+.skill-card:hover {
+    transform: translateY(-10px) scale(1.05);
     background: #f5b400;
-    border-radius: 5px;
+    color: #000;
 }
 
-/* ================= MOBILE RESPONSIVE (IMPROVED) ================= */
-@media (max-width: 768px) {
+/* ICON CHANGE COLOR ON HOVER */
+.skill-card:hover i {
+    color: #000;
+}
 
-    body {
-        overflow-x: hidden;
+/* GLOW ANIMATION */
+.skill-card::before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 100%;
+    background: rgba(255, 180, 0, 0.2);
+    left: 0;
+    top: 0;
+    transition: 0.4s;
+}
+
+.skill-card:hover::before {
+    width: 100%;
+}
+
+/* FADE IN ANIMATION */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
     }
 
-    .container {
-        width: 100%;
-        padding: 0 15px;
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.skill-card {
+    animation: fadeUp 0.8s ease forwards;
+}
+
+/* STAGGER EFFECT */
+.skill-card:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.skill-card:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.skill-card:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.skill-card:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+.skill-card:nth-child(5) {
+    animation-delay: 0.5s;
+}
+
+.skill-card:nth-child(6) {
+    animation-delay: 0.6s;
+}
+
+/* ================= ANIMATIONS ================= */
+
+/* Fade In */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
     }
 
-    /* NAVBAR */
-    nav {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 10px;
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
+}
 
-    nav a {
-        font-size: 14px;
-        margin: 5px;
-    }
+/* Apply animation */
+.hero .text {
+    animation: fadeIn 1s ease-in-out;
+}
 
-    /* HERO */
-    .hero {
-        padding: 30px 0;
-        text-align: center;
-    }
+.image img {
+    animation: fadeIn 1.2s ease-in-out;
+}
 
-    .hero-content {
-        flex-direction: column;
-    }
+.about-content {
+    animation: fadeIn 1.2s ease-in-out;
+}
 
-    .hero .text {
-        max-width: 100%;
-    }
+.skills {
+    animation: fadeIn 1.5s ease-in-out;
+}
 
-    .hello {
-        font-size: 14px;
-    }
+/* Button hover animation */
+.btn {
+    transition: all 0.3s ease;
+}
 
-    .hero h1 {
-        font-size: 26px;
-    }
+.btn:hover {
+    transform: scale(1.05);
+}
 
-    .subtitle {
-        font-size: 14px;
-    }
+/* Image hover glow */
+.image img:hover {
+    transform: scale(1.05);
+    transition: 0.3s;
+}
 
-    /* BUTTONS */
-    .buttons {
-        margin-top: 15px;
-    }
-
-    .btn {
-        display: block;
-        width: 100%;
-        margin: 10px 0;
-        text-align: center;
-    }
-
-    /* IMAGE */
-    .image img {
-        width: 200px;
-        height: 240px;
-        margin-top: 20px;
-        border-radius: 15px;
-    }
-
-    /* ABOUT */
-    .about-content {
-        flex-direction: column;
-        text-align: center;
-        gap: 20px;
-    }
-
-    .about-img img {
-        width: 200px;
-    }
-
-    .about-text {
-        padding: 20px;
-    }
-
-    .about-text p {
-        font-size: 14px;
-    }
-
-    /* SKILLS */
-    .section-title {
-        font-size: 22px;
-    }
-
-    .skill p {
-        font-size: 14px;
-    }
+/* Navbar hover smooth */
+nav a {
+    transition: 0.3s;
 }

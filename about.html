@@ -6,61 +6,64 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Me - Portfolio</title>
     <style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
-}
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
 
-body {
-    background: #000;
-    color: #fff;
-}
+        body {
+            background: #000;
+            color: #fff;
+        }
 
-/* CONTAINER */
-.container {
-    width: 90%;
-    margin: auto;
-}
+        /* CONTAINER */
+        .container {
+            width: 90%;
+            margin: auto;
+        }
 
-/* NAVBAR */
-.header {
-    position: sticky;
-    top: 0;
-    background: #000;
-    z-index: 1000;
-}
+        /* NAVBAR */
+        .header {
+            position: sticky;
+            top: 0;
+            background: #000;
+            z-index: 1000;
+        }
 
-.nav {
-    display: flex;
-    justify-content: center;
-    padding: 20px 0;
-}
+        .nav {
+            display: flex;
+            justify-content: center;
+            padding: 20px 0;
+        }
 
-nav a {
-    margin: 0 20px;
-    text-decoration: none;
-    color: #fff;
-    font-size: 16px;
-    position: relative;
-}
+        nav a {
+            margin: 0 20px;
+            text-decoration: none;
+            color: #fff;
+            font-size: 16px;
+            position: relative;
+            transition: 0.3s;
+        }
 
-/* underline hover */
-nav a::after {
-    content: "";
-    width: 0%;
-    height: 2px;
-    background: #f5b400;
-    position: absolute;
-    left: 0;
-    bottom: -5px;
-    transition: 0.3s;
-}
+        /* underline hover */
+        nav a::after {
+            content: "";
+            width: 0%;
+            height: 2px;
+            background: #f5b400;
+            position: absolute;
+            left: 0;
+            bottom: -5px;
+            transition: 0.3s;
+        }
 
-nav a:hover::after {
-    width: 100%;
-}
+
+
+        nav a:hover::after {
+            width: 100%;
+        }
 
         /* ABOUT SECTION */
         .about {
@@ -73,9 +76,10 @@ nav a:hover::after {
             font-size: 36px;
             margin-bottom: 50px;
             position: relative;
+            animation: fadeDown 1s ease;
         }
 
-        /* underline effect */
+        /* underline */
         .about h1::after {
             content: "";
             width: 80px;
@@ -91,6 +95,7 @@ nav a:hover::after {
             align-items: center;
             justify-content: center;
             gap: 60px;
+            animation: fadeUp 1s ease;
         }
 
         /* IMAGE */
@@ -99,12 +104,28 @@ nav a:hover::after {
             height: 320px;
             object-fit: cover;
             border-radius: 20px;
-            box-shadow: 0 0 25px rgba(244, 124, 20, 0.3);
+            transition: 0.4s;
         }
 
-        /* TEXT */
+        /* IMAGE HOVER 🔥 */
+        .about-img img:hover {
+            transform: scale(1.05);
+
+        }
+
+        /* TEXT BOX */
         .about-text {
             max-width: 500px;
+            background: #111;
+            padding: 25px;
+            border-radius: 15px;
+            transition: 0.4s;
+        }
+
+        /* HOVER CARD */
+        .about-text:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 0 30px rgba(245, 180, 0, 0.3);
         }
 
         /* DESCRIPTION */
@@ -112,6 +133,7 @@ nav a:hover::after {
             font-size: 18px;
             line-height: 1.6;
             margin-bottom: 20px;
+            color: #ccc;
         }
 
         /* LIST */
@@ -127,6 +149,47 @@ nav a:hover::after {
         /* highlight labels */
         .about-text li b {
             color: #f5b400;
+        }
+
+        /* ================= ANIMATIONS ================= */
+
+        /* fade up */
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* fade down */
+        @keyframes fadeDown {
+            from {
+                opacity: 0;
+                transform: translateY(-40px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ================= MOBILE ================= */
+        @media (max-width: 768px) {
+            .about-container {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .about-img img {
+                width: 220px;
+                height: 260px;
+            }
         }
     </style>
 </head>

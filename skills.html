@@ -8,89 +8,166 @@
 
     <style>
         * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
-}
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
 
-body {
-    background: #000;
-    color: #fff;
-}
+        body {
+            background: #000;
+            color: #fff;
+        }
 
-/* CONTAINER */
-.container {
-    width: 90%;
-    margin: auto;
-}
+        /* CONTAINER */
+        .container {
+            width: 90%;
+            margin: auto;
+        }
 
-/* NAVBAR */
-.header {
-    position: sticky;
-    top: 0;
-    background: #000;
-    z-index: 1000;
-}
+        /* NAVBAR */
+        .header {
+            position: sticky;
+            top: 0;
+            background: #000;
+            z-index: 1000;
+        }
 
-.nav {
-    display: flex;
-    justify-content: center;
-    padding: 20px 0;
-}
+        .nav {
+            display: flex;
+            justify-content: center;
+            padding: 20px 0;
+        }
 
-nav a {
-    margin: 0 20px;
-    text-decoration: none;
-    color: #fff;
-    font-size: 16px;
-    position: relative;
-}
+        nav a {
+            margin: 0 20px;
+            text-decoration: none;
+            color: #fff;
+            font-size: 16px;
+            position: relative;
+        }
 
-/* underline hover */
-nav a::after {
-    content: "";
-    width: 0%;
-    height: 2px;
-    background: #f5b400;
-    position: absolute;
-    left: 0;
-    bottom: -5px;
-    transition: 0.3s;
-}
+        /* underline hover */
+        nav a::after {
+            content: "";
+            width: 0%;
+            height: 2px;
+            background: #f5b400;
+            position: absolute;
+            left: 0;
+            bottom: -5px;
+            transition: 0.3s;
+        }
 
-nav a:hover::after {
-    width: 100%;
-}
+        nav a:hover::after {
+            width: 100%;
+        }
 
         /* SKILLS */
+
         .skills {
-            padding: 60px 0;
-        }
-
-        .section-title {
+            padding: 80px 0;
             text-align: center;
-            margin-bottom: 30px;
         }
 
-        .skill {
-            margin-bottom: 20px;
+        .skills-box {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
         }
 
-        .skill p {
-            display: flex;
-            justify-content: space-between;
+        /* CARD */
+        .skill-card {
+            background: #111;
+            padding: 25px;
+            border-radius: 15px;
+            transition: 0.4s;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
         }
 
-        .bar {
-            height: 6px;
-            background: #333;
-            margin-top: 5px;
+        /* ICON */
+        .skill-card i {
+            font-size: 40px;
+            margin-bottom: 10px;
+            color: #f5b400;
         }
 
-        .fill {
-            height: 100%;
+        /* TEXT */
+        .skill-card p {
+            font-size: 14px;
+        }
+
+        /* HOVER EFFECT 🔥 */
+        .skill-card:hover {
+            transform: translateY(-10px) scale(1.05);
             background: #f5b400;
+            color: #000;
+        }
+
+        /* ICON CHANGE COLOR ON HOVER */
+        .skill-card:hover i {
+            color: #000;
+        }
+
+        /* GLOW ANIMATION */
+        .skill-card::before {
+            content: "";
+            position: absolute;
+            width: 0;
+            height: 100%;
+            background: rgba(255, 180, 0, 0.2);
+            left: 0;
+            top: 0;
+            transition: 0.4s;
+        }
+
+        .skill-card:hover::before {
+            width: 100%;
+        }
+
+        /* FADE IN ANIMATION */
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .skill-card {
+            animation: fadeUp 0.8s ease forwards;
+        }
+
+        /* STAGGER EFFECT */
+        .skill-card:nth-child(1) {
+            animation-delay: 0.1s;
+        }
+
+        .skill-card:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .skill-card:nth-child(3) {
+            animation-delay: 0.3s;
+        }
+
+        .skill-card:nth-child(4) {
+            animation-delay: 0.4s;
+        }
+
+        .skill-card:nth-child(5) {
+            animation-delay: 0.5s;
+        }
+
+        .skill-card:nth-child(6) {
+            animation-delay: 0.6s;
         }
     </style>
 
@@ -103,12 +180,12 @@ nav a:hover::after {
         <div class="container nav">
             <nav>
                 <a href="index.html">Home</a>
-                <a href="about.html" >About</a>
+                <a href="about.html">About</a>
                 <a href="resume.html">Resume</a>
                 <a href="services.html">Services</a>
-                <a href="skills.html" >Skills</a>
-                <a href="projects.html" >Projects</a>
-                <a href="contact.html" >Contact</a>
+                <a href="skills.html">Skills</a>
+                <a href="projects.html">Projects</a>
+                <a href="contact.html">Contact</a>
             </nav>
         </div>
     </header>
@@ -118,47 +195,38 @@ nav a:hover::after {
         <div class="container">
             <h2 class="section-title">My Skills</h2>
 
-            <div class="skill">
-                <p>HTML5 <span>85%</span></p>
-                <div class="bar">
-                    <div class="fill" style="width:85%"></div>
-                </div>
-            </div>
+            <div class="skills-box">
 
-            <div class="skill">
-                <p>CSS3 <span>75%</span></p>
-                <div class="bar">
-                    <div class="fill" style="width:75%"></div>
+                <div class="skill-card">
+                    <i class="fab fa-html5"></i>
+                    <p>HTML5</p>
                 </div>
-            </div>
 
-            <div class="skill">
-                <p>jQuery <span>0%</span></p>
-                <div class="bar">
-                    <div class="fill" style="width:0%"></div>
+                <div class="skill-card">
+                    <i class="fab fa-css3-alt"></i>
+                    <p>CSS3</p>
                 </div>
-            </div>
 
-
-            <div class="skill">
-                <p>SEO <span>20%</span></p>
-                <div class="bar">
-                    <div class="fill" style="width:20%"></div>
+                <div class="skill-card">
+                    <i class="fab fa-js"></i>
+                    <p>JavaScript</p>
                 </div>
-            </div>
 
-            <div class="skill">
-                <p>MS Word <span>85%</span></p>
-                <div class="bar">
-                    <div class="fill" style="width:85%"></div>
+                <div class="skill-card">
+                    <i class="fas fa-search"></i>
+                    <p>SEO</p>
                 </div>
-            </div>
 
-            <div class="skill">
-                <p>C Language <span>15%</span></p>
-                <div class="bar">
-                    <div class="fill" style="width:15%"></div>
+                <div class="skill-card">
+                    <i class="fas fa-file-word"></i>
+                    <p>MS Word</p>
                 </div>
+
+                <div class="skill-card">
+                    <i class="fas fa-code"></i>
+                    <p>C Language</p>
+                </div>
+
             </div>
         </div>
     </section>

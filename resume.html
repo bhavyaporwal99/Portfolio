@@ -7,61 +7,57 @@
     <title>Resume - Portfolio</title>
 
     <style>
-       * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
-}
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
 
-body {
-    background: #000;
-    color: #fff;
-}
+        body {
+            background: #000;
+            color: #fff;
+        }
 
-/* CONTAINER */
-.container {
-    width: 90%;
-    margin: auto;
-}
+        /* NAVBAR */
+        .header {
+            position: sticky;
+            top: 0;
+            background: #000;
+            z-index: 1000;
+        }
 
-/* NAVBAR */
-.header {
-    position: sticky;
-    top: 0;
-    background: #000;
-    z-index: 1000;
-}
+        .nav {
+            display: flex;
+            justify-content: center;
+            padding: 20px 0;
+        }
 
-.nav {
-    display: flex;
-    justify-content: center;
-    padding: 20px 0;
-}
+        nav a {
+            margin: 0 20px;
+            text-decoration: none;
+            color: #fff;
+            font-size: 16px;
+            position: relative;
+            transition: 0.3s;
+        }
 
-nav a {
-    margin: 0 20px;
-    text-decoration: none;
-    color: #fff;
-    font-size: 16px;
-    position: relative;
-}
+        /* underline hover */
+        nav a::after {
+            content: "";
+            width: 0%;
+            height: 2px;
+            background: #f5b400;
+            position: absolute;
+            left: 0;
+            bottom: -5px;
+            transition: 0.3s;
+        }
 
-/* underline hover */
-nav a::after {
-    content: "";
-    width: 0%;
-    height: 2px;
-    background: #f5b400;
-    position: absolute;
-    left: 0;
-    bottom: -5px;
-    transition: 0.3s;
-}
 
-nav a:hover::after {
-    width: 100%;
-}
+        nav a:hover::after {
+            width: 100%;
+        }
 
         /* RESUME SECTION */
         .resume {
@@ -75,10 +71,20 @@ nav a:hover::after {
         .resume-box {
             background: #111;
             padding: 40px;
-            border-radius: 12px;
+            border-radius: 15px;
             text-align: center;
             width: 350px;
-            box-shadow: 0 0 20px rgba(172, 7, 237, 0.549);
+            box-shadow: 0 0 20px rgba(245, 180, 0, 0.3);
+            transition: 0.4s;
+
+            /* animation */
+            animation: fadeUp 1s ease;
+        }
+
+        /* hover effect 🔥 */
+        .resume-box:hover {
+            transform: translateY(-10px) scale(1.03);
+            box-shadow: 0 0 40px rgba(245, 180, 0, 0.6);
         }
 
         .resume-box h1 {
@@ -98,6 +104,7 @@ nav a:hover::after {
             text-decoration: none;
             display: inline-block;
             border-radius: 6px;
+            transition: 0.3s;
         }
 
         .yellow {
@@ -106,8 +113,23 @@ nav a:hover::after {
             font-weight: bold;
         }
 
+        /* button hover 🔥 */
         .yellow:hover {
             background: #ffcc00;
+            transform: scale(1.08);
+        }
+
+        /* ENTRY ANIMATION */
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
     </style>
 </head>
